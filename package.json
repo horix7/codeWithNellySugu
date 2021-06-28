@@ -1,7 +1,7 @@
 {
   "name": "nelly-sugu-challenge-one",
   "version": "1.0.1",
-  "description": "HTML/CSS/JS Boilerplate with live server setup.",
+  "description": "HTML/CSS/JS  project",
   "main": "index.js",
   "scripts": {
     "start": "live-server"
