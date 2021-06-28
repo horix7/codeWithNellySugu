@@ -5,7 +5,6 @@ const fetchUserData = () => {
   .then((response) => response.json())
   .then((json) => {
     const UserElement = document.querySelector('#userList');
-    console.log(json)
 
     json.forEach(element => {
       console.log(element)
@@ -15,7 +14,7 @@ const fetchUserData = () => {
         <div> <span class="user-name"> ${element.name} </span> <br/> <i class="far fa-envelope-open"></i>  &nbsp; ${element.email} </div>
         </div>
 
-        <button id=\"${element.id}\" class="view-more" onclick="fetchUserPosts(${element.id})"> View Posts </button>
+        <button id=\"${element.id}\" class="view-more"  name=\"${element.name + "++" + element.email}\" onclick="fetchUserPosts(${element.id})"> View Posts </button>
         </li>
       `
       return
@@ -25,7 +24,12 @@ const fetchUserData = () => {
 }
 
 const fetchUserPosts = (user_id) => {
+
+
   const loadingBtn = document.getElementById(user_id)
+  const name = loadingBtn.name.split("++")[0]
+  const email = loadingBtn.name.split("++")[1]
+
   loadingBtn.innerHTML = `<div class="loader"></div>`
 
   fetch('https://jsonplaceholder.typicode.com/posts?userId=' +  user_id)
@@ -35,8 +39,9 @@ const fetchUserPosts = (user_id) => {
     root.innerHTML = `
     <div class="userPosts">
       <div class="user-info"> <i class="far fa-user big-icon"></i> 
-      <div> <span class="user-name"> Names </span> <br/> <i class="far fa-envelope-open"></i>  &nbsp; email </div>
+      <div> <span class="user-name"> ${name} </span> <br/> <i class="far fa-envelope-open"></i>  &nbsp; ${email} <div class="end"> ${json.length} Posts</div> </div>
     </div>
+
     <ul class="post">
        
     </ul>

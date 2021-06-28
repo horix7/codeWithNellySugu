@@ -81,6 +81,22 @@ li div, li button {
   padding: 15px;
 }
 
+.userPosts {
+  padding: 20px;
+}
+
+.userPosts .user-info {
+  background-color: #2b2b2bc5;
+  position: sticky;
+  padding: 5px;
+  top: 0;
+}
+
+.end {
+  float: right;
+  font-weight: bold;
+  font-size: x-large;
+}
 .view-more:hover {
   background-color: rgba(255, 255, 255, 0.779);
   color: black;
