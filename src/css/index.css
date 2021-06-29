@@ -6,15 +6,28 @@ body {
   margin: 0 auto;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 button {
   cursor: pointer;
 }
 
+.loaderHolder {
+  text-align: center;
+}
 
 ul {  
   list-style-type: none;
   margin: 0;
   padding: 0;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: white;
 }
 
 #root {
@@ -66,7 +79,7 @@ li div, li button {
 }
 
 .userCard {
-  transition: padding 0.7s;
+  transition: padding 0.35s;
 }
 .userCard:hover {
   padding: 60px;
@@ -123,4 +136,56 @@ li div, li button {
 
 .post h2 {
   text-transform: uppercase;
+}
+
+.heading {
+  text-align: center;
+  width: 100%;
+  padding: 4px;
+  border-top: none;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.308);
+}
+.profileimage {
+  border-radius: 50%;
+}
+
+@media only screen and (max-width: 1000px) {
+  .user-name {
+    font-size: medium;
+
+  }
+
+  .view-more {
+  float: right;
+  background-color: rgba(0, 0, 0, 0.767);
+  color: white;
+  font-weight: bold;
+  padding: 18px;
+  font-size: large;
+}
+
+ 
+  .user-info {
+    grid-template-columns: 100px 1fr;
+    column-gap: 10px;
+  }
+  .big-icon {
+    font-size: 100px;
+  }
+
+  body {
+    max-width: 100%;
+    margin: 0 auto;
+  
+  }
+
+  .end {
+    font-size: 50px;
+  }
+  .userCard {
+    margin: 50px;
+  }
 }
